@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
 /* Initialisation */
     // Remplace la classe de <html />
@@ -6,20 +6,27 @@ $( document ).ready(function() {
         .removeClass('no-js')
         .addClass('js');
 
-/* DEV TOOLS */
-    // Calcul de la hauteur de #grid
-    $('#grid').height($( document ).height());
+    // Ajoute la classe "current" au lien de menu courant
+    var queryString = window.location.search.split('='),
+        currentPage = (queryString[1]) ? queryString[1] : 'home';
 
-    // Affiche / masque la grid
-    $('#toggle-grid').click(function() {
-        $('#grid').toggleClass('hidden');
-    });
-    // Keypress for switch button
-    $( document ).keypress(function (e) {
-        if (e.which == 32) {
-            $('#toggle-grid').trigger('click'); // on simule un click sur #toggle-grid
-            e.preventDefault(); // annule l'action par défaut --> return false;
-        }
+    $('#main-nav a').removeClass('current');
+    $('#nav-' + currentPage).addClass('current');
+
+/* Message flash */
+    var alert = $('#alert');
+    if (alert.length > 0) {
+        alert
+            .hide()
+            .slideDown(500)
+            .delay(30000)
+            .slideUp();
+    }
+
+    var close = $('.alert-close');
+    close.click(function(e) {
+        e.preventDefault();
+        alert.slideUp(500).hide();
     });
 
 });
