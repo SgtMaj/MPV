@@ -4,6 +4,6 @@
     define('ROOT', '/');
     define('ADMIN', '/__admin/');
     // Salts for password hash
-    define('SALT1', '8rE4kiNgBad');
-    define('SALT2', 'An6u5@m4cgyW3r');
-    define('SALT3', '!en#LaTh30r1edu8i6BaNg');
+    define('SALT1', 'vLyOrIjs0!@gfyp1kO');
+    define('SALT2', 'zlsry5ECY3jK!DdnmN');
+    define('SALT3', 'Hg46yIU9uyUU0KCdar');
